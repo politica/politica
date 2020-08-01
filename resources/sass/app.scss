@@ -1,0 +1,17 @@
+@tailwind base;
+
+input:invalid, textarea:invalid, select:invalid {
+    box-shadow: none;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+[x-cloak] {
+    display: none;
+}
