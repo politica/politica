@@ -1,15 +1,27 @@
-<div class="text-center mx-auto sm:mt-20">
+<div class="text-center mx-auto sm:mt-20 space-y-6">
     <h3 class="font-display text-4xl animate-entry">Ready to begin?</h3>
 
-    <h4 class="mt-3 text-lg text-gray-200">The test will assess your political views on a wide range of topic
-        areas.</h4>
+    <div class="space-y-6 text-lg text-gray-200 max-w-2xl mx-auto">
+        <p>
+            The test will assess your political views on a wide range of topic areas.
+        </p>
 
-    <div class="mt-6">
+        <p>
+            A series of statements will be presented to you. Click the viewpoint that you feel most strongly aligned
+            with.
+        </p>
+
+        <p>
+            For each statement, use the slider to dictate how important this issue is to you.
+        </p>
+    </div>
+
+    <div>
         <span class="inline-flex rounded-md shadow-sm">
             <button wire:click="$set('questionIndex', 0)" type="button"
                     class="inline-flex items-center px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150"
             >
-                Start my test
+                Start the test
 
                 <svg class="ml-3 -mr-1 h-5 w-5" viewBox="0 0 20 20" fill="currentColor"
                 >
