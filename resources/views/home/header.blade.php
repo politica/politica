@@ -1,4 +1,4 @@
-<div class="max-w-screen-xl px-4 mx-auto sm:px-6 space-y-16">
+<div class="max-w-screen-xl px-4 mx-auto sm:px-6 space-y-12 md:space-y-24">
     <div class="text-center">
         <h2 class="text-4xl font-display sm:text-5xl md:text-6xl sm:leading-tight">
             <span>Explore your</span>
@@ -10,7 +10,7 @@
             perspectives, providing you with tailored information and resources that complement them.
         </p>
 
-        <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+        <div class="max-w-md mx-auto sm:flex sm:justify-center mt-8">
             <div class="rounded-md shadow">
                 <a href="{{ route('test') }}"
                    class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
