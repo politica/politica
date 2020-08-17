@@ -16,10 +16,11 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('avatar')->nullable();
-            $table->string('discord_id')->unique();
+            $table->string('discord_id')->nullable()->unique();
             $table->string('email')->nullable();
             $table->string('name');
             $table->rememberToken();
+            $table->string('twitter_id')->nullable()->unique();
             $table->timestamps();
         });
     }

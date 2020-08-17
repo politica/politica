@@ -1,5 +1,5 @@
-<section class="overflow-hidden">
-    <div class="relative max-w-screen-xl mx-auto pt-20 pb-12 px-4 sm:px-6 lg:px-8 lg:py-20">
+<section>
+    <div class="relative max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8 lg:py-20">
         <div class="relative lg:flex lg:items-center">
             <div class="hidden lg:block lg:flex-shrink-0">
                 <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80" src="/images/benji.jpg" alt="" />
@@ -17,7 +17,10 @@
                 <blockquote class="relative">
                     <div class="text-2xl leading-9 font-medium">
                         <p>
-                            One of, if not the most thought-provoking and versatile Discord I've been in. The discussions are lively and broad covering all walks of life and perspectives. Staff are extremely kind and attentive, and most political aspects are represented here. Definitely worth a look around!
+                            One of, if not the most thought-provoking and versatile Discord I've been in. The
+                            discussions are lively and broad covering all walks of life and perspectives. Staff are
+                            extremely kind and attentive, and most political aspects are represented here. Definitely
+                            worth a look around!
                         </p>
                     </div>
                     <footer class="mt-8">

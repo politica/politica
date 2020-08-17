@@ -1,154 +1,70 @@
-<div class="relative mt-10">
-    <div class="hidden xl:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
-        <div class="relative h-full max-w-screen-xl mx-auto">
-            <svg
-                class="text-gray-600 absolute right-full transform translate-x-1/2"
-                width="400"
-                height="400"
-                viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" stroke="currentColor"
-                fill="currentColor"
-            >
-                <g>
-                    <g>
-                        <path
-                            d="m472.371.515c-5.389-1.621-11.074.675-13.833 5.579-18.05 32.073-52.65 76.533-102.832 132.137l-3.521 3.891c-2.776 3.068-2.54 7.806.528 10.582s7.807 2.541 10.583-.53c35.742-39.496 71.74-80.171 100.292-125.36-7.208 33.177-31.481 92.63-89.107 152.586-1.194 1.264-111.38 117.8-188.684 194.442-7.707-6.506-14.791-13.74-21.134-21.583 31.918-29.972 106.277-100.885 174.915-174.334 2.825-3.023 2.665-7.764-.358-10.589-3.024-2.825-7.765-2.664-10.589.359-67.432 72.159-140.434 141.882-172.895 172.393-3.476-5.252-6.641-10.715-9.461-16.363-1.072-2.146-2.005-4.069-2.782-5.698-3.126-6.559-10.269-10.067-17.368-8.533l-27.386 5.924c-4.563.987-8.415 3.931-10.564 8.077-2.135 4.117-2.325 8.92-.52 13.178 2.538 5.985 5.555 12.16 8.968 18.351 4.887 8.867 10.344 17.351 16.313 25.419l-71.511 71.511c-6.643 6.643-10.302 15.476-10.302 24.87 0 9.395 3.659 18.228 10.302 24.871 6.716 6.722 15.72 10.305 24.891 10.305 4.266 0 8.568-.775 12.69-2.371 3.859-1.493 5.776-5.832 4.282-9.69-1.492-3.858-5.828-5.778-9.69-4.282-7.459 2.886-15.93 1.098-21.581-4.553-3.814-3.813-5.914-8.884-5.914-14.276s2.1-10.462 5.914-14.276l12.761-12.761 37.723 19.381-5.241 5.241c-2.925 2.926-2.925 7.669 0 10.594 2.927 2.926 7.669 2.926 10.596 0l55.211-55.211c7.201 5.154 14.72 9.906 22.537 14.214 6.188 3.412 12.363 6.429 18.353 8.969 4.271 1.81 9.057 1.616 13.176-.52 4.147-2.15 7.092-6.001 8.078-10.565l5.925-27.388c1.534-7.099-1.975-14.241-8.532-17.366-1.629-.776-3.552-1.71-5.7-2.782-6.637-3.315-13.021-7.103-19.104-11.316 14.487-14.38 28.858-28.878 43.169-43.434 37.802-38.448 75.212-77.283 112.435-116.291 25.924-27.167 52.65-54.012 74.257-84.852 25.211-35.985 49.961-80.753 53.19-125.636.403-5.627-3.083-10.69-8.48-12.314zm-358.906 457.443-37.396-19.213 18.129-18.13 37.396 19.213zm29.421-29.173-37.724-19.381 17.139-17.139c8.726 10.283 18.354 19.761 28.777 28.329zm73.269-18.121c.257.122.394.4.336.675l-5.924 27.387c-.042.194-.154.338-.332.431-.223.115-.368.053-.43.026-5.518-2.34-11.228-5.131-16.968-8.296-35.046-19.315-63.78-48.049-83.095-83.094-3.165-5.744-5.957-11.453-8.295-16.967-.142-.335.13-.693.457-.764 0 0 27.385-5.924 27.386-5.924.261-.057.554.08.675.333.81 1.7 1.784 3.708 2.904 5.95 16.614 33.26 44.079 60.726 77.339 77.338 2.24 1.12 4.248 2.094 5.947 2.905z"
-                        />
-                    </g>
-                </g>
-            </svg>
-            <svg
-                class="text-gray-600 absolute left-full transform -translate-x-2/5 translate-y-1/4"
-                width="400"
-                height="400" enable-background="new 0 0 512 512" fill="currentColor" stroke="currentColor"
-                viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
-            >
-                <g>
-                    <g>
-                        <path
-                            d="m256 68.267c-122.33 0-221.87 99.533-221.87 221.87 0 122.34 99.533 221.87 221.87 221.87 122.34 0 221.87-99.524 221.87-221.87 0-122.33-99.525-221.87-221.87-221.87zm0 426.67c-112.92 0-204.8-91.878-204.8-204.8s91.878-204.8 204.8-204.8 204.8 91.878 204.8 204.8-91.878 204.8-204.8 204.8z"
-                        />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <path
-                            d="m256 110.93c-98.816 0-179.2 80.384-179.2 179.2 0 98.807 80.384 179.2 179.2 179.2 98.807 0 179.2-80.393 179.2-179.2 0-98.816-80.393-179.2-179.2-179.2zm0 341.33c-89.404 0-162.13-72.73-162.13-162.13s72.729-162.13 162.13-162.13 162.13 72.73 162.13 162.13-72.729 162.13-162.13 162.13z"
-                        />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <path
-                            d="m256 0c-23.526 0-42.667 19.14-42.667 42.667 0 23.526 19.14 42.667 42.667 42.667 23.526 0 42.667-19.14 42.667-42.667s-19.141-42.667-42.667-42.667zm0 68.267c-14.114 0-25.6-11.486-25.6-25.6s11.486-25.6 25.6-25.6 25.6 11.486 25.6 25.6-11.486 25.6-25.6 25.6z"
-                        />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect transform="matrix(.7071 -.7071 .7071 .7071 -130.17 265.99)" x="247.46" y="253.91"
-                              width="17.067" height="72.405"
-                        />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <path
-                            d="m347.36 198.76c-2.68-2.671-6.793-3.26-10.078-1.476l-110.93 59.733c-1.468 0.794-2.671 1.997-3.465 3.473l-59.733 110.93c-1.792 3.319-1.195 7.407 1.476 10.078 1.647 1.638 3.831 2.5 6.042 2.5 1.382 0 2.773-0.333 4.036-1.024l110.93-59.733c1.476-0.794 2.68-1.997 3.473-3.473l59.733-110.93c1.784-3.319 1.187-7.415-1.484-10.078zm-72.056 110.68-83.635 45.03 45.03-83.635 83.635-45.03-45.03 83.635z"
-                        />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect x="247.47" y="119.47" width="17.067" height="42.667" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect x="247.47" y="418.13" width="17.067" height="42.667" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect x="85.333" y="281.6" width="42.667" height="17.067" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect x="384" y="281.6" width="42.667" height="17.067" />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect transform="matrix(.7071 -.7071 .7071 .7071 -86.003 159.32)" x="140.78" y="165.37"
-                              width="17.066" height="36.207"
-                        />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect transform="matrix(.7071 -.7071 .7071 .7071 -174.37 372.67)" x="354.13" y="378.71"
-                              width="17.067" height="36.207"
-                        />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect transform="matrix(.7071 -.7071 .7071 .7071 -19.242 311.94)" x="354.86" y="170.66"
-                              width="24.132" height="17.067"
-                        />
-                    </g>
-                </g>
-                <g>
-                    <g>
-                        <rect transform="matrix(.7071 -.7071 .7071 .7071 -241.1 220.07)" x="133.04" y="392.53"
-                              width="24.132" height="17.067"
-                        />
-                    </g>
-                </g>
-            </svg>
+<div class="max-w-screen-xl px-4 mx-auto sm:px-6 space-y-16">
+    <div class="text-center">
+        <h2 class="text-4xl font-display sm:text-5xl md:text-6xl sm:leading-tight">
+            <span>Explore your</span>
+            <br />
+            <span class="text-indigo-400">Political Positions</span>
+        </h2>
+        <p class="max-w-md mx-auto mt-3 text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+            Politica is a new, innovative political testing platform. It analyses your viewpoints from a wide range of
+            perspectives, providing you with tailored information and resources that complement them.
+        </p>
+
+        <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+            <div class="rounded-md shadow">
+                <a href="{{ route('test') }}"
+                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+                >
+                    Get started
+                    <svg class="-mr-1 ml-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor"
+                         class="arrow-narrow-right w-6 h-6"
+                    >
+                        <path fill-rule="evenodd"
+                              d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                              clip-rule="evenodd"
+                        ></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+                <a href="{{ route('partners.index') }}"
+                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:border-indigo-300 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+                >
+                    Our Partners
+                </a>
+            </div>
         </div>
     </div>
 
-    <div class="relative pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32">
-        <div class="mt-10 mx-auto max-w-screen-xl">
-            <div class="text-center">
-                <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-100 sm:text-5xl sm:leading-none md:text-6xl">
-                    Politica
-                </h2>
-                <h4 class="mt-3 text-2xl font-medium tracking-tight leading-10 text-gray-300 sm:text-3xl sm:leading-none md:text-4xl">
-                    <span class="text-red-500">Politics</span>
-                    &
-                    <span class="text-blue-400">Philosophy</span>
-                    tests, done right
-                </h4>
-                <div class="mt-5 max-w-xs sm:max-w-xl mx-auto sm:flex sm:justify-center md:mt-8">
-                    <div class="rounded-md shadow">
-                        <a href="#tests"
-                           class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
-                        >
-                            Take a test
-                        </a>
-                    </div>
-                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                        <a href="https://discord.gg/4kNrNSX" target="_blank" class="w-full flex items-center justify-center px-5 py-3
-                    border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white
-                    hover:text-indigo-500 focus:outline-none focus:border-indigo-300 focus:shadow-outline-indigo
-                    transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
-                        >
-                            <svg class="h-6 w-6 mr-2" fill="currentColor"
-                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 240"
-                            >
-                                <path class="st0"
-                                      d="M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z"
-                                />
-                                <path class="st0"
-                                      d="M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z"
-                                />
-                            </svg>
-                            <span>Join our Discord community</span>
-                        </a>
-                    </div>
-                </div>
+    <div>
+        <h3 class="text-sm font-display tracking-wide text-center text-gray-300 uppercase">Created by the
+            largest political communities on Discord</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-8 md:grid-cols-8">
+            <div class="flex justify-center col-span-1 animate-entry">
+                <img class="h-16" src="/images/partner-logos/ideological-discussion.png" alt="Ideological Discussion">
+            </div>
+            <div class="flex justify-center col-span-1 animate-entry">
+                <img class="h-16" src="/images/partner-logos/politicord.png" alt="Politicord">
+            </div>
+            <div class="flex justify-center col-span-1 animate-entry">
+                <img class="h-16" src="/images/partner-logos/intellectualist.png" alt="Intellectualist">
+            </div>
+            <div class="flex justify-center col-span-1 animate-entry">
+                <img class="h-16" src="/images/partner-logos/politics.png" alt="Politics">
+            </div>
+            <div class="flex justify-center col-span-1 animate-entry">
+                <img class="h-16" src="/images/partner-logos/blue-politics.png" alt="Blue Politics">
+            </div>
+            <div class="flex justify-center col-span-1 animate-entry">
+                <img class="h-16" src="/images/partner-logos/political-debate.png" alt="Political Debate">
+            </div>
+            <div class="flex justify-center col-span-1 animate-entry">
+                <img class="h-16" src="/images/partner-logos/the-chess-board.png" alt="The Chess Board">
+            </div>
+            <div class="flex justify-center col-span-1 animate-entry">
+                <img class="h-16" src="/images/partner-logos/the-multinational-server.png"
+                     alt="The Multinational Server"
+                >
             </div>
         </div>
     </div>

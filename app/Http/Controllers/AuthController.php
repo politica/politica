@@ -10,12 +10,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
-    public function redirectToProvider()
-    {
-        return Socialite::driver('discord')->redirect();
-    }
-
-    public function handleProviderCallback()
+    public function handleDiscordCallback()
     {
         $details = Socialite::driver('discord')->user();
 
@@ -41,13 +36,13 @@ class AuthController extends Controller
 
         auth()->login($user, true);
 
-        return redirect()->intended(route('home'));
+        return redirect()->intended();
     }
 
     public function logout()
     {
         auth()->logout();
 
-        return redirect()->route('home');
+        return redirect('/');
     }
 }

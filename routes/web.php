@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,15 +16,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('', 'HomeController@index')->name('home');
 
-Route::livewire('tests/{test:slug}', 'tests.show')->name('tests.show');
+Route::livewire('partners', 'partners.index')->name('partners.index');
+Route::livewire('partners/{partner:slug}', 'partners.show')->name('partners.show');
+
+Route::livewire('test', 'test')->name('test');
+
+Route::livewire('results/{result}', 'results.show')->name('results.show');
 
 Route::get('users/{user}', 'UserController@show')->name('users.show');
 
-Route::middleware('guest')->group(function () {
-    Route::get('auth', 'AuthController@redirectToProvider')->name('auth');
-    Route::get('auth/callback', 'AuthController@handleProviderCallback')->name('auth.callback');
+Route::middleware('auth')->group(function () {
+    Route::get('results/{result}/claim', 'ResultClaimsController')->name('results.claim')->middleware('signed');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::post('auth/logout', 'AuthController@logout')->name('auth.logout');
+Route::name('auth.')->prefix('auth')->group(function () {
+    Route::middleware('guest')->group(function () {
+        Route::livewire('', 'auth')->name('index');
+        Route::get('providers/discord/callback', [AuthController::class, 'handleDiscordCallback'])->name('providers.discord.callback');
+        Route::get('providers/twitter/callback', [AuthController::class, 'handleTwitterCallback'])->name('providers.twitter.callback');
+    });
+
+    Route::post('logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth');
 });

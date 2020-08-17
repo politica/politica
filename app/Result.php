@@ -13,47 +13,40 @@ class Result extends Model
      */
     protected $guarded = [];
 
-    /**
-     * All of the relationships to be touched.
-     *
-     * @var array
-     */
-    protected $touches = ['user'];
-
-    public function setValueAttribute()
+    public function getIdeologiesAttribute()
     {
-        $responses = Response::whereUserId(user()->id)->whereHas('answer.question', function ($query) {
-            $query->whereTestId($this->test->id);
-        })->get();
+        // Initialise array to hold ideology requirements that the results match
+        $requirements = collect();
 
-        $leftMax = $responses->sum(function (Response $response) {
-            return $response->answer->question->answers()->whereDirection('left')->orderByDesc('magnitude')->first()->magnitude ?? 0;
-        });
-        $rightMax = $responses->sum(function (Response $response) {
-            return $response->answer->question->answers()->whereDirection('right')->orderByDesc('magnitude')->first()->magnitude ?? 0;
-        });
-
-        if (! $leftMax || ! $rightMax) {
-            return 50;
+        // Find ideology requirements that the results match
+        foreach ($this->axes as $axis) {
+            foreach ($axis->axis->ideologyRequirements()->where([
+                ['min', '<=', $axis['value']],
+                ['max', '>=', $axis['value']],
+            ])->get() as $requirement) {
+                $requirements->push($requirement);
+            }
         }
 
-        $leftResponded = $responses->filter(function (Response $response) {
-            return $response->answer->direction == 'left';
-        })->sum(function (Response $response) {
-            return $response->answer->magnitude;
-        });
-        $rightResponded = $responses->filter(function (Response $response) {
-            return $response->answer->direction == 'right';
-        })->sum(function (Response $response) {
-            return $response->answer->magnitude;
-        });
+        // Sort ideologies by number of result matches
+        $ideologyMatches = collect(array_count_values($requirements->pluck('ideology_id')->toArray()))->sortDesc();
 
-        $this->attributes['value'] = round(50 - (($leftResponded / $leftMax) * 50) + (($rightResponded / $rightMax) * 50));
+        // Calculate relevance threshold
+        $relevanceThreshold = $ideologyMatches->unique()->slice(1, 1)->first() ?? $ideologyMatches->unique()->slice(0, 1)->first();
+
+        // Return relevant ideologies
+        return $ideologyMatches
+            ->take(5)
+            ->filter(function ($occurences, $ideologyId) use ($relevanceThreshold) {
+                return $occurences >= $relevanceThreshold;
+            })->map(function ($occurences, $ideologyId) {
+                return Ideology::find($ideologyId);
+            });
     }
 
-    public function test()
+    public function axes()
     {
-        return $this->belongsTo(Test::class);
+        return $this->hasMany(ResultAxis::class);
     }
 
     public function user()

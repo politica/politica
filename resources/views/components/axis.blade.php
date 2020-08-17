@@ -1,35 +1,51 @@
 @props(['result'])
 
-<div class="flex">
-    <div class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-t-lg rounded-bl-lg p-3 sm:p-4 md:p-5 bg-{{ $result->test->color_left }}">
-        <img style="filter: invert()" src="/images/{{ $result->test->icon_left }}" />
+<div class="flex items-center">
+    <div
+        class="flex flex-col flex-shrink-0 overflow-hidden bg-white border-2 border-white rounded-lg h-14 w-14 sm:h-20 sm:w-20"
+    >
+        <div class="bg-{{ $result->axis->color_left }} flex-grow flex items-center px-3 sm:px-4">
+            <img src="/images/axis-icons/{{ $result->axis->icon_left }}"
+                 class="w-full"
+            />
+        </div>
+        <p class="w-full leading-tight text-center text-gray-900 text-xxs sm:text-xs">{{ $result->axis->label_left }}</p>
     </div>
-    <div class="flex items-end flex-grow">
-        <div class="w-full">
-            <div class="justify-between hidden px-2 md:px-3 py-1 font-medium sm:flex text-sm md:text-base">
-                <div class="whitespace-no-wrap">{{ $result->test->label_left }}</div>
-                <div class="whitespace-no-wrap">{{ $result->test->label_right }}</div>
+
+    <div class="flex-grow">
+        <p class="-mt-4 text-xs text-center sm:text-base">
+            <span class="@if ($result->label) hidden sm:inline @endif font-bold"
+            >{{ $result->axis->name.($result->label ? ':' : '') }}</span>
+            <span>{{ $result->label }}</span>
+        </p>
+
+        <div class="flex h-10 mt-1 border-t-2 border-b-2 border-white sm:h-12">
+            <div
+                class="flex items-center h-full @if (100 - $result->value >= 30) px-2 @endif bg-{{ $result->axis->color_left }} border-r border-white"
+                style="width: {{ 100 - $result->value }}%"
+            >
+                @if (100 - $result->value >= 30)
+                    <p>{{ 100 - $result->value }}%</p> @endif
             </div>
-            <div class="flex h-8 md:h-10 text-xs sm:text-sm md:text-base">
-                <div style="width: {{ 100 - $result->value }}%"
-                     class="flex overflow-hidden @if (100 - $result->value > 24) px-1 sm:px-2 md:px-3 @endif items-center bg-{{ $result->test->color_left }} border-r-2 border-white"
-                >
-                    <div class="w-full text-left">@if (100 - $result->value > 24) {{ 100 - $result->value }}% @endif</div>
-                </div>
-                <div style="width: {{ $result->value }}%"
-                     class="flex overflow-hidden @if ($result->value > 24) px-1 sm:px-2 md:px-3 @endif items-center bg-{{ $result->test->color_right }} border-l-2 border-white"
-                >
-                    <div class="w-full text-right">@if ($result->value > 24) {{ $result->value }}% @endif</div>
-                </div>
+
+            <div
+                class="flex items-center justify-end h-full @if ($result->value >= 30) px-2 @endif bg-{{ $result->axis->color_right }} border-l border-white"
+                style="width: {{ $result->value }}%"
+            >
+                @if ($result->value >= 30)
+                    <p>{{ $result->value }}%</p> @endif
             </div>
         </div>
     </div>
-    <div class="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-t-lg rounded-br-lg p-3 sm:p-4 md:p-5 bg-{{ $result->test->color_right }}">
-        <img style="filter: invert()" src="/images/{{ $result->test->icon_right }}" />
-    </div>
-</div>
 
-<div class="flex justify-between py-1 text-xs sm:hidden space-x-2">
-    <p class="text-left">{{ $result->test->label_left }}</p>
-    <p class="text-right">{{ $result->test->label_right }}</p>
+    <div
+        class="flex flex-col flex-shrink-0 overflow-hidden bg-white border-2 border-white rounded-lg h-14 w-14 sm:h-20 sm:w-20"
+    >
+        <div class="bg-{{ $result->axis->color_right }} flex-grow flex items-center px-3 sm:px-4">
+            <img src="/images/axis-icons/{{ $result->axis->icon_right }}"
+                 class="w-full"
+            />
+        </div>
+        <p class="w-full leading-tight text-center text-gray-900 bg-white text-xxs sm:text-xs">{{ $result->axis->label_right }}</p>
+    </div>
 </div>

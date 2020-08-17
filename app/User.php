@@ -36,18 +36,8 @@ class User extends Authenticatable
         return $value;
     }
 
-    public function responses()
-    {
-        return $this->hasMany(Response::class);
-    }
-
     public function results()
     {
         return $this->hasMany(Result::class);
-    }
-
-    public function tests()
-    {
-        return $this->hasManyThrough(Test::class, Result::class);
     }
 }

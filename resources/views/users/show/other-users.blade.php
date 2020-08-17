@@ -1,7 +1,7 @@
 @if (count($otherUsers))
     <div class="bg-gray-900 rounded-lg">
         <div class="p-6">
-            <h3 class="text-xl leading-6 font-bold">
+            <h3 class="text-xl leading-6 font-display">
                 Other users
             </h3>
         </div>
@@ -17,12 +17,16 @@
                     </div>
                     <div class="flex-grow md:flex">
                         <div class="flex-grow">
-                            <h4 class="font-bold text-lg">{{ $user->name }}</h4>
+                            <h4 class="font-display text-lg">{{ $user->name }}</h4>
                             <p>
-                                <span>Taken</span> <span class="font-bold">{{ count($user->results) }} {{ count($user->results) != 1 ? 'tests' : 'test' }}</span>
+                                <span>Taken</span>
+                                <span class="font-display"
+                                >{{ count($user->results) }} {{ count($user->results) != 1 ? 'tests' : 'test' }}</span>
                             </p>
                             <p>
-                                <span>Answered</span> <span class="font-bold">{{ count($user->responses) }} {{ count($user->responses) != 1 ? 'questions' : 'question' }}</span>
+                                <span>Answered</span>
+                                <span class="font-display"
+                                >{{ count($user->responses) }} {{ count($user->responses) != 1 ? 'questions' : 'question' }}</span>
                             </p>
                         </div>
                     </div>

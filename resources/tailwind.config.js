@@ -2,7 +2,13 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     theme: {
+        extend: {
+            fontSize: {
+                'xxs': '.5rem',
+            },
+        },
         fontFamily: {
+            display: ['Lexend Deca', 'Inter', ...defaultTheme.fontFamily.sans],
             sans: ['Inter', ...defaultTheme.fontFamily.sans],
         },
     },

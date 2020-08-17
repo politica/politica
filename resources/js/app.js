@@ -1,5 +1,11 @@
 import 'alpinejs';
-import Turbolinks from 'turbolinks';
+import animate from 'animateplus';
 import 'typeface-inter';
+import 'typeface-lexend-deca';
 
-Turbolinks.start();
+animate({
+    elements: '.animate-entry',
+    duration: 1000,
+    delay: index => index * 100,
+    transform: ['scale(0)', 'scale(1)'],
+});

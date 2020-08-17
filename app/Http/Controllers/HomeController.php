@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Response;
 use App\Result;
-use App\Test;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
     public function index()
     {
+        Cache::add('questionsAnswered', Result::sum('questions_answered'), 60);
+        Cache::add('testsTaken', Result::count(), 60);
+
         return view('home', [
-            'categories' => Test::all()->groupBy('category_id'),
-            'questions_answered' => Response::count(),
-            'tests_taken' => Result::count(),
+            'questionsAnswered' => cache('questionsAnswered'),
+            'testsTaken' => cache('testsTaken'),
         ]);
     }
 }
