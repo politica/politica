@@ -240,7 +240,9 @@
             @endif
 
             <div class="px-4 py-8 bg-gray-900 sm:px-6 lg:px-8 lg:rounded-lg">
-                <div class="space-y-8">
+                <h4 class="text-lg font-display sm:text-2xl">Result Axes</h4>
+
+                <div class="space-y-8 mt-6">
                     @foreach ($axes as $axis)
                         <x-axis :result="$axis" />
                     @endforeach
@@ -280,7 +282,7 @@
         </div>
 
         <div class="col-span-1 px-4 py-8 bg-gray-900 sm:px-6 lg:px-8 lg:rounded-lg xl:col-span-2 space-y-4">
-            <h4 class="text-lg font-display sm:text-2xl">Your Ideologies</h4>
+            <h4 class="text-lg font-display sm:text-2xl">Closest Ideologies</h4>
 
             <div class="space-y-8">
                 @foreach ($result->ideologies as $ideology)
