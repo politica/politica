@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Partner;
 use App\Result;
 use Illuminate\Support\Facades\Cache;
 
@@ -13,6 +14,7 @@ class HomeController extends Controller
         Cache::add('testsTaken', Result::count(), 60);
 
         return view('home', [
+            'partners' => Partner::where('is_primary', 1)->get(),
             'questionsAnswered' => cache('questionsAnswered'),
             'testsTaken' => cache('testsTaken'),
         ]);
