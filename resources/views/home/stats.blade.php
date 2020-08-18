@@ -40,7 +40,7 @@
             <dt class="order-2 mt-2 text-lg leading-6 font-medium text-gray-300">
                 community members
             </dt>
-            <dd x-data="{ current: 0, max: 73125 }"
+            <dd x-data="{ current: 0, max: 76341 }"
                 x-init="setInterval(() => { if (current < max) { current += (max / 20) } else { current = max } }, 25)"
                 x-text="Math.round(current).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '+'"
                 class="order-1 text-5xl leading-none font-display text-indigo-500"
