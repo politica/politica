@@ -36,8 +36,8 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     @livewireScripts
 </head>
-<body class="flex flex-col min-h-screen overflow-x-hidden text-gray-100 bg-gray-800 select-none"
-      style="background: linear-gradient(#252f3f, #374151)"
+<body
+    class="flex flex-col min-h-screen overflow-x-hidden text-gray-100 bg-gradient-to-b from-gray-800 to-gray-700 select-none"
 >
 <div class="relative overflow-hidden">
     <div class="hidden sm:block sm:absolute sm:inset-0">
