@@ -5,22 +5,26 @@
 
     <meta name="title" content="@hasSection('title') @yield('title') | @endif {{ config('app.name') }}">
     <meta name="description"
-          content="An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions."
+          content="@hasSection('description') @yield('description') @else An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions. @endif"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ config('app.url') }}">
     <meta property="og:title" content="@hasSection('title') @yield('title') | @endif {{ config('app.name') }}">
     <meta property="og:description"
-          content="An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions."
+          content="@hasSection('description') @yield('description') @else An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions. @endif"
     >
-    <meta property="og:image" content="{{ config('app.url') }}/images/question.png">
+    <meta property="og:image"
+          content="@hasSection('image') @yield('image') @else {{ config('app.url') }}/images/question.png @endif"
+    >
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ config('app.url') }}">
     <meta property="twitter:title" content="@hasSection('title') @yield('title') | @endif {{ config('app.name') }}">
     <meta property="twitter:description"
-          content="An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions."
+          content="@hasSection('description') @yield('description') @else An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions. @endif"
     >
-    <meta property="twitter:image" content="{{ config('app.url') }}/images/question.png">
+    <meta property="twitter:image"
+          content="@hasSection('image') @yield('image') @else {{ config('app.url') }}/images/question.png @endif"
+    >
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
