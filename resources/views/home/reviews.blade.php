@@ -2,7 +2,7 @@
     <div class="relative max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8 lg:py-20">
         <div class="relative lg:flex lg:items-center">
             <div class="hidden lg:block lg:flex-shrink-0">
-                <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80" src="/images/reviewer-avatars/mig.jpg" alt="" />
+                <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80" src="/images/reviewer-avatars/mig.jpg" alt="Mig" />
             </div>
 
             <div class="relative lg:ml-10">
@@ -27,7 +27,7 @@
                     <footer class="mt-8">
                         <div class="flex">
                             <div class="flex-shrink-0 lg:hidden">
-                                <img class="h-12 w-12 rounded-full" src="/images/reviewer-avatars/mig.jpg" alt="" />
+                                <img class="h-12 w-12 rounded-full" src="/images/reviewer-avatars/mig.jpg" alt="Mig" />
                             </div>
                             <div class="ml-4 lg:ml-0">
                                 <div class="text-lg leading-6 font-medium">Mig</div>
@@ -65,7 +65,7 @@
                         <div class="flex">
                             <div class="flex-shrink-0 lg:hidden">
                                 <img class="h-12 w-12 rounded-full" src="/images/reviewer-avatars/octopus-crusader.png"
-                                     alt=""
+                                     alt="Octopus Crusader"
                                 />
                             </div>
                             <div class="ml-4 lg:ml-0">
@@ -82,7 +82,7 @@
             <div class="hidden lg:block lg:flex-shrink-0">
                 <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80"
                      src="/images/reviewer-avatars/octopus-crusader.png"
-                     alt=""
+                     alt="Octopus Crusader"
                 />
             </div>
         </div>
