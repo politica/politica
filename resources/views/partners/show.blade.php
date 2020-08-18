@@ -12,7 +12,7 @@
             </div>
 
             <div class="flex-grow min-w-0 mt-4 text-center sm:text-left sm:mt-0">
-                <a href="#"
+                <a href="{{ route('partners.index') }}"
                    class="hidden mb-1 text-gray-300 transition duration-150 ease-in-out sm:block hover:text-gray-200"
                 >Partners
                 </a>
