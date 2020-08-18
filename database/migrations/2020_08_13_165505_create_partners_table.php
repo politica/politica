@@ -26,7 +26,6 @@ class CreatePartnersTable extends Migration
             $table->string('feature_3_icon');
             $table->string('feature_3_label');
             $table->string('invite');
-            $table->boolean('is_primary')->default(0);
             $table->string('logo');
             $table->string('name');
             $table->text('review');
