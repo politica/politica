@@ -2,7 +2,7 @@
     <div class="relative max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8 lg:py-20">
         <div class="relative lg:flex lg:items-center">
             <div class="hidden lg:block lg:flex-shrink-0">
-                <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80" src="/images/benji.jpg" alt="" />
+                <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80" src="/images/reviewer-avatars/mig.jpg" alt="" />
             </div>
 
             <div class="relative lg:ml-10">
@@ -17,19 +17,20 @@
                 <blockquote class="relative">
                     <div class="text-2xl leading-9 font-medium">
                         <p>
-                            One of, if not the most thought-provoking and versatile Discord I've been in. The
-                            discussions are lively and broad covering all walks of life and perspectives. Staff are
-                            extremely kind and attentive, and most political aspects are represented here. Definitely
-                            worth a look around!
+                            Definitely without a doubt the best server I have ever been to. The best thing about this
+                            place is the fact that everyone respects each other. There are many people with different
+                            nationalities and ideologies that we discuss, but at the end of the day we recognize each
+                            other as humans. Unlike most servers that I have been to, this place respects every opinion
+                            and lets you express yourself.
                         </p>
                     </div>
                     <footer class="mt-8">
                         <div class="flex">
                             <div class="flex-shrink-0 lg:hidden">
-                                <img class="h-12 w-12 rounded-full" src="/images/benji.jpg" alt="" />
+                                <img class="h-12 w-12 rounded-full" src="/images/reviewer-avatars/mig.jpg" alt="" />
                             </div>
                             <div class="ml-4 lg:ml-0">
-                                <div class="text-lg leading-6 font-medium">Benji</div>
+                                <div class="text-lg leading-6 font-medium">Mig</div>
                                 <div class="text-base leading-6 font-medium text-indigo-400">
                                     Member, Ideological Discussion
                                 </div>
@@ -53,22 +54,24 @@
                 <blockquote class="relative">
                     <div class="text-2xl leading-9 font-medium">
                         <p>
-                            Definitely without a doubt the best server I have ever been to. The best thing about this
-                            place is the fact that everyone respects each other. There are many people with different
-                            nationalities and ideologies that we discuss, but at the end of the day we recognize each
-                            other as humans. Unlike most servers that I have been to, this place respects every opinion
-                            and lets you express yourself.
+                            PoliticalHub is an incredible server with a friendly staff and great people, they hold a
+                            variety of channels ranging from peaceful discussions to spirited debates. It holds a great
+                            staff to enforce rules, and moderate debates. In addition the community of PoliticalHub is
+                            very kind and thoughtful people I am glad to know, they are quick to accommodate any
+                            people’s requests or issues and are quick to help people with any of their problems.
                         </p>
                     </div>
                     <footer class="mt-8">
                         <div class="flex">
                             <div class="flex-shrink-0 lg:hidden">
-                                <img class="h-12 w-12 rounded-full" src="/images/mig.jpg" alt="" />
+                                <img class="h-12 w-12 rounded-full" src="/images/reviewer-avatars/octopus-crusader.png"
+                                     alt=""
+                                />
                             </div>
                             <div class="ml-4 lg:ml-0">
-                                <div class="text-lg leading-6 font-medium">Mig</div>
+                                <div class="text-lg leading-6 font-medium">Octopus Crusader</div>
                                 <div class="text-base leading-6 font-medium text-indigo-400">
-                                    Member, Ideological Discussion
+                                    Member, PoliticalHub
                                 </div>
                             </div>
                         </div>
@@ -78,7 +81,7 @@
 
             <div class="hidden lg:block lg:flex-shrink-0">
                 <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80"
-                     src="/images/mig.jpg"
+                     src="/images/reviewer-avatars/octopus-crusader.png"
                      alt=""
                 />
             </div>
