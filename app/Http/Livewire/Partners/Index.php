@@ -11,7 +11,7 @@ class Index extends Component
 
     public function mount()
     {
-        $this->partners = Partner::orderBy('name')->get();
+        $this->partners = Partner::all();
     }
 
     public function render()
