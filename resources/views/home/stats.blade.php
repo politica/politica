@@ -1,14 +1,12 @@
 <div class="max-w-4xl mx-auto space-y-8">
-    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl leading-9 font-display sm:text-4xl sm:leading-10">
-                Trusted by the largest political communities
-            </h2>
-            <p class="mt-3 text-xl leading-7 text-gray-300 sm:mt-4">
-                Politica is the product of a partnership between Discord communities that all strive for the same goal.
-                The result is a reliable and useful test that is now in use by thousands of our members.
-            </p>
-        </div>
+    <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl leading-9 font-display sm:text-4xl sm:leading-10">
+            Trusted by the largest political communities
+        </h2>
+        <p class="mt-3 text-xl leading-7 text-gray-300 sm:mt-4">
+            Politica is the product of a partnership between Discord communities that all strive for the same goal.
+            The result is a reliable and useful test that is now in use by thousands of our members.
+        </p>
     </div>
 
     <dl class="rounded-lg bg-gray-900 shadow-lg sm:grid sm:grid-cols-3">
