@@ -24,12 +24,18 @@ class Test extends Component
         // Initialise array to hold axes that results were recorded for
         $axes = [];
 
+        // Create result record
+        $result = Result::create([
+            'questions_answered' => count($this->responses),
+            'user_id' => user()->id ?? null,
+        ]);
+
         // Each question that was answered
         foreach ($this->responses as $index => $response) {
             $question = $this->questions[$index];
 
             // Each question effect
-            $question->effects->each(function (QuestionEffect $effect) use (&$axes, $response) {
+            $question->effects->each(function (QuestionEffect $effect) use (&$axes, $question, $response, $result) {
                 $axisId = $effect->axis_id;
 
                 // Add an axis entry if not present already
@@ -64,14 +70,14 @@ class Test extends Component
 
                 // Adjust position on axis
                 $axes[$axisId]['position'][$magnitudes[$response['answer']] < 0 ? 'left' : 'right'] += $magnitudes[$response['answer']] * $importanceMultiplier;
+
+                // Create response record
+                $result->responses()->create([
+                    'answer' => $response['answer'],
+                    'question_id' => $question->id,
+                ]);
             });
         }
-
-        // Create result record
-        $result = Result::create([
-            'questions_answered' => count($this->responses),
-            'user_id' => user()->id ?? null,
-        ]);
 
         // Each axes that results were recorded for
         foreach ($axes as $index => $axis) {
