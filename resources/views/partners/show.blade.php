@@ -1,4 +1,6 @@
 @section('title', $partner->name.' | Partners')
+@section('description', $partner->description)
+@section('image', config('app.url').'/images/partner-logos/'.$partner->logo)
 
 <div class="mb-16 space-y-20">
     <header class="px-4 sm:px-6 lg:px-8">
