@@ -72,6 +72,7 @@ class DatabaseSeeder extends Seeder
 
             if (count($userResults)) {
                 $result = $newUser->results()->create([
+                    'created_at' => $results[0]->created_at,
                     'questions_answered' => count($userResults) * rand(10, 16),
                 ]);
 
