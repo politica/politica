@@ -13,7 +13,7 @@
 
             <div class="flex-grow min-w-0 mt-4 text-center sm:text-left sm:mt-0">
                 <a href="#"
-                   class="hidden mb-2 text-gray-300 transition duration-150 ease-in-out sm:block hover:text-gray-200"
+                   class="hidden mb-1 text-gray-300 transition duration-150 ease-in-out sm:block hover:text-gray-200"
                 >Partners
                 </a>
                 <h2 class="text-2xl leading-7 text-white font-display sm:text-3xl sm:leading-9 sm:truncate">
