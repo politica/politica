@@ -40,32 +40,15 @@
         <h3 class="text-sm font-display tracking-wide text-center text-gray-300 uppercase">Created by the
             largest political communities on Discord</h3>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-8 md:grid-cols-8">
-            <div class="flex justify-center col-span-1 animate-entry">
-                <img class="h-16" src="/images/partner-logos/ideological-discussion.png" alt="Ideological Discussion">
-            </div>
-            <div class="flex justify-center col-span-1 animate-entry">
-                <img class="h-16" src="/images/partner-logos/politicord.png" alt="Politicord">
-            </div>
-            <div class="flex justify-center col-span-1 animate-entry">
-                <img class="h-16" src="/images/partner-logos/intellectualist.png" alt="Intellectualist">
-            </div>
-            <div class="flex justify-center col-span-1 animate-entry">
-                <img class="h-16" src="/images/partner-logos/politics.png" alt="Politics">
-            </div>
-            <div class="flex justify-center col-span-1 animate-entry">
-                <img class="h-16" src="/images/partner-logos/blue-politics.png" alt="Blue Politics">
-            </div>
-            <div class="flex justify-center col-span-1 animate-entry">
-                <img class="h-16" src="/images/partner-logos/political-debate.png" alt="Political Debate">
-            </div>
-            <div class="flex justify-center col-span-1 animate-entry">
-                <img class="h-16" src="/images/partner-logos/the-chess-board.png" alt="The Chess Board">
-            </div>
-            <div class="flex justify-center col-span-1 animate-entry">
-                <img class="h-16" src="/images/partner-logos/the-multinational-server.png"
-                     alt="The Multinational Server"
+            @foreach ($partners as $partner)
+                <a href="{{ route('partners.show', ['partner' => $partner]) }}"
+                   class="flex justify-center col-span-1 animate-entry"
                 >
-            </div>
+                    <img class="h-16" src="/images/partner-logos/{{ $partner->logo }}"
+                         alt="{{ $partner->name }}"
+                    >
+                </a>
+            @endforeach
         </div>
     </div>
 </div>
