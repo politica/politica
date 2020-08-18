@@ -14,7 +14,7 @@ class HomeController extends Controller
         Cache::add('testsTaken', Result::count(), 60);
 
         return view('home', [
-            'partners' => Partner::where('is_primary', 1)->get(),
+            'partners' => Partner::limit(8)->get(),
             'questionsAnswered' => cache('questionsAnswered'),
             'testsTaken' => cache('testsTaken'),
         ]);
