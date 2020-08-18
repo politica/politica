@@ -3,7 +3,10 @@
         <h2 class="text-4xl font-display sm:text-5xl md:text-6xl sm:leading-tight">
             <span>Explore your</span>
             <br />
-            <span class="text-indigo-400">Political Positions</span>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-indigo-500 to-indigo-600">
+                Political
+                Positions
+            </span>
         </h2>
         <p class="max-w-md mx-auto mt-3 text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
             Politica is a new, innovative political testing platform. It analyses your viewpoints from a wide range of
