@@ -1,5 +1,5 @@
 <div class="text-center mx-auto sm:mt-20 space-y-6">
-    <h3 class="font-display text-4xl animate-entry">Ready to begin?</h3>
+    <h3 class="font-display text-4xl">Ready to begin?</h3>
 
     <div class="space-y-6 text-lg text-gray-200 max-w-2xl mx-auto">
         <p>
