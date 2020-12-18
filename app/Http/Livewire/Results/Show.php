@@ -2,8 +2,8 @@
 
 namespace App\Http\Livewire\Results;
 
-use App\Result;
-use App\ResultAxis;
+use App\Models\Result;
+use App\Models\ResultAxis;
 use Illuminate\Support\Facades\URL;
 use Livewire\Component;
 

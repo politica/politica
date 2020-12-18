@@ -1,8 +1,4 @@
-@extends('layouts.app')
-
-@section('title', $user->name.' | Users')
-
-@section('content')
+<x-layouts.app :title="$user->name.' | Users'">
     {{--    <header class="py-10">--}}
     {{--        <div class="sm:flex items-center sm:space-x-8 space-y-4 sm:space-y-0 text-center sm:text-left">--}}
     {{--            <div class="flex-shrink-0">--}}
@@ -68,4 +64,4 @@
     {{--            @include('users.show.other-users')--}}
     {{--        </div>--}}
     {{--    </div>--}}
-@endsection
+</x-layouts.app>

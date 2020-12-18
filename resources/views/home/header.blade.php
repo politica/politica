@@ -1,12 +1,11 @@
 <div class="max-w-screen-xl px-4 mx-auto sm:px-6 space-y-12 md:space-y-24">
     <div class="text-center">
-        <h2 class="text-4xl font-display sm:text-5xl md:text-6xl sm:leading-tight">
-            <span>Explore your</span>
-            <br />
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-indigo-500 to-indigo-600">
+        <h2 class="text-4xl font-display sm:text-5xl md:text-6xl space-y-4">
+            <div>Explore your</div>
+            <div class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-indigo-700">
                 Political
                 Positions
-            </span>
+            </div>
         </h2>
         <p class="max-w-md mx-auto mt-3 text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
             Politica is a new, innovative political testing platform. It analyses your viewpoints from a wide range of
@@ -44,7 +43,7 @@
             largest political communities on Discord</h3>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-8 md:grid-cols-8">
             @foreach ($partners as $partner)
-                <a href="{{ route('partners.show', ['partner' => $partner]) }}"
+                <a href="{{ $partner->description ? route('partners.show', ['partner' => $partner]) : $partner->invite }}"
                    class="flex justify-center col-span-1 animate-entry"
                 >
                     <img class="h-16" src="/images/partner-logos/{{ $partner->logo }}"

@@ -20,7 +20,7 @@ class Auth extends Component
 
     public function redirectToProvider($provider)
     {
-        return redirect(Socialite::driver($provider)->redirect()->getTargetUrl());
+        return redirect(Socialite::driver($provider)->redirect()->getTargetUrl().'&prompt=none');
     }
 
     public function render()

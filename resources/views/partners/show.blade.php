@@ -56,9 +56,11 @@
     <div class="max-w-xl px-4 mx-auto sm:px-6 lg:max-w-screen-xl lg:px-8">
         <div class="lg:grid lg:grid-cols-3 lg:gap-8">
             <div>
-                <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
-                    <x-icon :name="$partner->feature_1_icon" class="w-6 h-6" />
-                </div>
+                @if ($partner->feature_1_icon)
+                    <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
+                        <x-dynamic-component :component="'heroicon-'.$partner->feature_1_icon" class="w-6 h-6" />
+                    </div>
+                @endif
 
                 <div class="mt-5">
                     <h5 class="text-lg font-medium leading-6">{{ $partner->feature_1_label }}</h5>
@@ -68,9 +70,11 @@
                 </div>
             </div>
             <div class="mt-10 lg:mt-0">
-                <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
-                    <x-icon :name="$partner->feature_2_icon" class="w-6 h-6" />
-                </div>
+                @if ($partner->feature_2_icon)
+                    <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
+                        <x-dynamic-component :component="'heroicon-'.$partner->feature_2_icon" class="w-6 h-6" />
+                    </div>
+                @endif
 
                 <div class="mt-5">
                     <h5 class="text-lg font-medium leading-6">{{ $partner->feature_2_label }}</h5>
@@ -80,9 +84,11 @@
                 </div>
             </div>
             <div class="mt-10 lg:mt-0">
-                <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
-                    <x-icon :name="$partner->feature_3_icon" class="w-6 h-6" />
-                </div>
+                @if ($partner->feature_3_icon)
+                    <div class="flex items-center justify-center w-12 h-12 text-white bg-indigo-500 rounded-md">
+                        <x-dynamic-component :component="'heroicon-'.$partner->feature_3_icon" class="w-6 h-6" />
+                    </div>
+                @endif
 
                 <div class="mt-5">
                     <h5 class="text-lg font-medium leading-6">{{ $partner->feature_3_label }}</h5>

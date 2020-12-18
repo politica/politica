@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>@hasSection('title') @yield('title') | @endif {{ config('app.name') }}</title>
+    <title>@isset($title) {{ $title }} | @endif {{ config('app.name') }}</title>
 
-    <meta name="title" content="@hasSection('title') @yield('title') | @endif {{ config('app.name') }}">
+    <meta name="title" content="@isset($title) {{ $title }} | @endif {{ config('app.name') }}">
     <meta name="description"
-          content="@hasSection('description') @yield('description') @else An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions. @endif"
+          content="@isset($description) {{ $description }} @else An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions. @endif"
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ config('app.url') }}">
-    <meta property="og:title" content="@hasSection('title') @yield('title') | @endif {{ config('app.name') }}">
+    <meta property="og:title" content="@isset($title) {{ $title }} | @endif {{ config('app.name') }}">
     <meta property="og:description"
-          content="@hasSection('description') @yield('description') @else An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions. @endif"
+          content="@isset($description) {{ $description }} @else An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions. @endif"
     >
     <meta property="og:image"
-          content="@hasSection('image') @yield('image') @else {{ config('app.url') }}/images/question.png @endif"
+          content="@isset($image) {{ $image }} @else {{ config('app.url') }}/images/question.png @endif"
     >
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ config('app.url') }}">
-    <meta property="twitter:title" content="@hasSection('title') @yield('title') | @endif {{ config('app.name') }}">
+    <meta property="twitter:title" content="@isset($title) {{ $title }} | @endif {{ config('app.name') }}">
     <meta property="twitter:description"
-          content="@hasSection('description') @yield('description') @else An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions. @endif"
+          content="@isset($description) {{ $description }} @else An innovative political test platform and community, with a diverse set of online tests to accurately determine your political positions. @endif"
     >
     <meta property="twitter:image"
-          content="@hasSection('image') @yield('image') @else {{ config('app.url') }}/images/question.png @endif"
+          content="@isset($image) {{ $image }} @else {{ config('app.url') }}/images/question.png @endif"
     >
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="{{ asset('images/favicon.png') }}" rel="icon" type="image/png">
 
-    <link href="{{ asset('css/app.css') }}?v=0.0.1" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     @livewireStyles
 
-    <script src="{{ asset('js/app.js') }}?v=0.0.1" defer></script>
+    <script src="{{ mix('js/app.js') }}" defer></script>
     @livewireScripts
 </head>
 <body
-    class="flex flex-col min-h-screen overflow-x-hidden text-gray-100 bg-gradient-to-b from-gray-800 to-gray-700 select-none"
+    class="flex flex-col min-h-screen overflow-x-hidden text-gray-100 bg-gray-800 select-none"
 >
 <div class="relative overflow-hidden">
     <div class="hidden sm:block sm:absolute sm:inset-0">
@@ -153,11 +153,26 @@
                         </div>
                     @endauth
                     @guest
-                        <a href="{{ route('auth.index') }}"
-                           class="inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-gray-600 border border-transparent rounded-md hover:bg-gray-500 focus:outline-none focus:shadow-outline-gray focus:border-gray-700 active:bg-gray-700"
-                        >
-                            Log in
-                        </a>
+                        <span class="rounded-md shadow-sm inline-flex">
+                            <a href="{{ route('auth.index') }}"
+                                    class="inline-flex items-center px-4 py-2 text-sm font-medium leading-6 text-white transition duration-150 ease-in-out bg-gray-900 border border-transparent rounded-md hover:bg-gray-700 focus:outline-none focus:border-gray-600 focus:shadow-outline-gray active:bg-gray-700"
+                            >
+                                Sign in with Discord
+
+                                <svg class="w-5 h-5 ml-3 -mr-1" viewBox="0 0 24 24" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                          d="m3.58 21.196h14.259l-.681-2.205 1.629 1.398 1.493 1.338 2.72 2.273v-21.525c-.068-1.338-1.22-2.475-2.648-2.475l-16.767.003c-1.427 0-2.585 1.139-2.585 2.477v16.24c0 1.411 1.156 2.476 2.58 2.476zm10.548-15.513-.033.012.012-.012zm-7.631 1.269c1.833-1.334 3.532-1.27 3.532-1.27l.137.135c-2.243.535-3.26 1.537-3.26 1.537s.272-.133.747-.336c3.021-1.188 6.32-1.102 9.374.402 0 0-1.019-.937-3.124-1.537l.186-.183c.291.001 1.831.055 3.479 1.26 0 0 1.844 3.15 1.844 7.02-.061-.074-1.144 1.666-3.931 1.726 0 0-.472-.534-.808-1 1.63-.468 2.24-1.404 2.24-1.404-.535.337-1.023.537-1.419.737-.609.268-1.219.4-1.828.535-2.884.468-4.503-.315-6.033-.936l-.523-.266s.609.936 2.174 1.404c-.411.469-.818 1.002-.818 1.002-2.786-.066-3.802-1.806-3.802-1.806 0-3.876 1.833-7.02 1.833-7.02z"
+                                          clip-rule="evenodd"
+                                    />
+                                    <path
+                                        d="m14.308 12.771c.711 0 1.29-.6 1.29-1.34 0-.735-.576-1.335-1.29-1.335v.003c-.708 0-1.288.598-1.29 1.338 0 .734.579 1.334 1.29 1.334z"
+                                    />
+                                    <path
+                                        d="m9.69 12.771c.711 0 1.29-.6 1.29-1.34 0-.735-.575-1.335-1.286-1.335l-.004.003c-.711 0-1.29.598-1.29 1.338 0 .734.579 1.334 1.29 1.334z"
+                                    />
+                                </svg>
+                            </a>
+                        </span>
                     @endguest
                 </div>
             </nav>
@@ -227,7 +242,7 @@
                                 <a href="{{ route('auth.index') }}"
                                    class="block px-3 py-2 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"
                                    role="menuitem"
-                                >Log in
+                                >Sign in with Discord
                                 </a>
                             @endguest
                         </div>
@@ -239,7 +254,7 @@
         </div>
 
         <main class="flex-grow w-full mx-auto max-w-7xl pt-12">
-            @yield('content')
+            {{ $slot }}
         </main>
 
         <footer class="mt-10 bg-gray-900">

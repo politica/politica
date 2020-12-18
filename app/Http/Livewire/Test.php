@@ -2,9 +2,9 @@
 
 namespace App\Http\Livewire;
 
-use App\Question;
-use App\QuestionEffect;
-use App\Result;
+use App\Models\Question;
+use App\Models\QuestionEffect;
+use App\Models\Result;
 use Livewire\Component;
 
 class Test extends Component

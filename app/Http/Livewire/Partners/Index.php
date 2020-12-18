@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Partners;
 
-use App\Partner;
+use App\Models\Partner;
 use Livewire\Component;
 
 class Index extends Component
@@ -11,7 +11,9 @@ class Index extends Component
 
     public function mount()
     {
-        $this->partners = Partner::all();
+        $this->partners = Partner::all()->sortByDesc(function ($partner) {
+            return (bool) $partner->description;
+        });
     }
 
     public function render()
