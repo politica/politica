@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Question;
 use App\Models\QuestionEffect;
 use App\Models\Result;
+use App\Models\SuggestedQuestion;
 use Livewire\Component;
 
 class Test extends Component
@@ -18,6 +19,10 @@ class Test extends Component
     public $requiredQuestionsCount = 0;
 
     public $responses = [];
+
+    public $suggestionForm = [];
+
+    public $suggestionFormOpen = false;
 
     public function calculateResult()
     {
@@ -128,7 +133,6 @@ class Test extends Component
         if (! $this->questionIndex) return;
 
         $this->questionIndex--;
-
         $this->restoreImportance();
     }
 
@@ -155,6 +159,33 @@ class Test extends Component
         if (! array_key_exists($this->questionIndex, $this->responses)) return;
 
         $this->responses[$this->questionIndex]['importance'] = $this->importance;
+    }
+
+    public function submitSuggestion()
+    {
+        $suggestion = $this->questions->values()->get($this->questionIndex)->suggestions()->create($this->suggestionForm);
+
+        if (auth()->check()) {
+            $suggestion->user()->associate(user());
+            $suggestion->save();
+        }
+
+        $this->reset('suggestionFormOpen');
+    }
+
+    public function updatedQuestionIndex($value)
+    {
+        if (is_null($value)) return;
+
+        $this->suggestionForm = $this->questions->values()->get($value)->only([
+            'body',
+            'description_agree',
+            'description_disagree',
+            'description_neutral',
+            'description_strongly_disagree',
+            'description_strongly_agree',
+            'more_information',
+        ]);
     }
 
     public function render()

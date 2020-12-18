@@ -37,7 +37,7 @@
     @livewireScripts
 </head>
 <body
-    class="flex flex-col min-h-screen overflow-x-hidden text-gray-100 bg-gray-800 select-none"
+    class="flex flex-col min-h-screen overflow-x-hidden text-gray-100 bg-gray-800"
 >
 <div class="relative overflow-hidden">
     <div class="hidden sm:block sm:absolute sm:inset-0">

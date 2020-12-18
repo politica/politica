@@ -17,4 +17,9 @@ class Question extends Model
     {
         return $this->hasMany(QuestionEffect::class);
     }
+
+    public function suggestions()
+    {
+        return $this->hasMany(QuestionSuggestion::class);
+    }
 }

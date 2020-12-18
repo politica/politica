@@ -104,157 +104,171 @@
         @endif
     </div>
 
-    <div class="overflow-hidden bg-gray-900 rounded-lg shadow">
-        <div class="h-2">
-            <div style="width: {{ ($questionIndex / count($questions)) * 100 }}%" class="h-full bg-indigo-500"
-            ></div>
-        </div>
-
-        <div class="px-4 pt-3 pb-4 sm:pt-6 sm:px-8 sm:pb-8 sm:flex sm:space-x-5">
-            <div
-                class="inline-flex items-center justify-center flex-shrink-0 p-2 text-base font-medium text-white bg-indigo-500 rounded-md sm:h-12 sm:w-12 sm:text-xl sm:p-0"
-            >
-                <span class="mx-auto">
-                    <span class="inline sm:hidden">Question {{ $questionIndex + 1 }}</span>
-                    <span class="hidden sm:inline">Q{{ $questionIndex + 1 }}</span>
-                </span>
+    @unless($suggestionFormOpen)
+        <div class="space-y-3">
+            <div class="text-xs justify-end flex items-center">
+                <button wire:click="$set('suggestionFormOpen', true)" type="button" class="hover:underline text-gray-200 hover:text-white">
+                    Help us improve this question
+                </button>
             </div>
-            <div class="flex-grow">
-                <h3 class="mt-2 text-xl font-medium">{{ $this->question->body }}</h3>
 
-                <div>
-                    @if ($this->question->more_information)
-                        <div x-data="{ open: false }" @click="open = ! open" @click.away="open = false"
-                             class="p-2 mt-3 transition duration-200 ease-in-out bg-indigo-600 rounded cursor-pointer hover:bg-indigo-700"
+            <div class="overflow-hidden bg-gray-900 rounded-lg shadow">
+                <div class="h-2">
+                    <div style="width: {{ ($questionIndex / count($questions)) * 100 }}%" class="h-full bg-indigo-500"
+                    ></div>
+                </div>
+
+                <div class="px-4 pt-3 sm:pt-6 sm:px-8 pb-4 sm:pb-8">
+                    <div class="sm:flex sm:space-x-5">
+                        <div
+                            class="inline-flex items-center justify-center flex-shrink-0 p-2 text-base font-medium text-white bg-indigo-500 rounded-md sm:h-12 sm:w-12 sm:text-xl sm:p-0"
                         >
-                            <h4 class="flex items-center">
-                                <svg class="w-4 h-4 mr-2" viewBox="0 0 20 20" fill="currentColor"
+                            <span class="mx-auto">
+                                <span class="inline sm:hidden">Question {{ $questionIndex + 1 }}</span>
+                                <span class="hidden sm:inline">Q{{ $questionIndex + 1 }}</span>
+                            </span>
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="mt-2 text-xl font-medium">{{ $this->question->body }}</h3>
+
+                            <div>
+                                @if ($this->question->more_information)
+                                    <div x-data="{ open: false }" @click="open = ! open" @click.away="open = false"
+                                         class="p-2 mt-3 transition duration-200 ease-in-out bg-indigo-600 rounded cursor-pointer hover:bg-indigo-700"
+                                    >
+                                        <h4 class="flex items-center">
+                                            <svg class="w-4 h-4 mr-2" viewBox="0 0 20 20" fill="currentColor"
+                                            >
+                                                <path fill-rule="evenodd"
+                                                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                      clip-rule="evenodd"
+                                                ></path>
+                                            </svg>
+
+                                            <span class="font-medium">More information</span>
+                                        </h4>
+
+                                        <p x-show="open" class="mt-1 mx-6 text-sm">
+                                            {{ $this->question->more_information }}
+                                        </p>
+                                    </div>
+                                @endif
+                            </div>
+
+                            <div class="mt-3">
+                                <div wire:click="respond('stronglyAgree')"
+                                     class="flex px-4 py-2 space-x-5 transition duration-200 ease-in-out rounded cursor-pointer hover:bg-gray-800"
                                 >
-                                    <path fill-rule="evenodd"
-                                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                          clip-rule="evenodd"
-                                    ></path>
-                                </svg>
+                                    <h4 class="flex-shrink-0 leading-6">a</h4>
+                                    <div class="flex-grow">
+                                        <h4 class="text-lg font-medium">Strongly agree</h4>
+                                        <p class="text-sm">{{ $this->question->description_strongly_agree }}</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                                <span class="font-medium">More information</span>
-                            </h4>
+                            <div class="mt-3">
+                                <div wire:click="respond('agree')"
+                                     class="flex px-4 py-2 space-x-5 transition duration-200 ease-in-out rounded cursor-pointer hover:bg-gray-800"
+                                >
+                                    <h4 class="flex-shrink-0 leading-6">b</h4>
+                                    <div class="flex-grow">
+                                        <h4 class="text-lg font-medium">Agree</h4>
+                                        <p class="text-sm">{{ $this->question->description_agree }}</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                            <p x-show="open" class="mt-1 mx-6 text-sm">
-                                {{ $this->question->more_information }}
-                            </p>
-                        </div>
-                    @endif
-                </div>
+                            <div class="mt-3">
+                                <div wire:click="respond('neutral')"
+                                     class="flex px-4 py-2 space-x-5 transition duration-200 ease-in-out rounded cursor-pointer hover:bg-gray-800"
+                                >
+                                    <h4 class="flex-shrink-0 leading-6">c</h4>
+                                    <div class="flex-grow">
+                                        <h4 class="text-lg font-medium">Neutral</h4>
+                                        <p class="text-sm">{{ $this->question->description_neutral }}</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="mt-3">
-                    <div wire:click="respond('stronglyAgree')"
-                         class="flex px-4 py-2 space-x-5 transition duration-200 ease-in-out rounded cursor-pointer hover:bg-gray-800"
-                    >
-                        <h4 class="flex-shrink-0 leading-6">a</h4>
-                        <div class="flex-grow">
-                            <h4 class="text-lg font-medium">Strongly agree</h4>
-                            <p class="text-sm">{{ $this->question->description_strongly_agree }}</p>
-                        </div>
-                    </div>
-                </div>
+                            <div class="mt-3">
+                                <div wire:click="respond('disagree')"
+                                     class="flex px-4 py-2 space-x-5 transition duration-200 ease-in-out rounded cursor-pointer hover:bg-gray-800"
+                                >
+                                    <h4 class="flex-shrink-0 leading-6">d</h4>
+                                    <div class="flex-grow">
+                                        <h4 class="text-lg font-medium">Disagree</h4>
+                                        <p class="text-sm">{{ $this->question->description_disagree }}</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="mt-3">
-                    <div wire:click="respond('agree')"
-                         class="flex px-4 py-2 space-x-5 transition duration-200 ease-in-out rounded cursor-pointer hover:bg-gray-800"
-                    >
-                        <h4 class="flex-shrink-0 leading-6">b</h4>
-                        <div class="flex-grow">
-                            <h4 class="text-lg font-medium">Agree</h4>
-                            <p class="text-sm">{{ $this->question->description_agree }}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-3">
-                    <div wire:click="respond('neutral')"
-                         class="flex px-4 py-2 space-x-5 transition duration-200 ease-in-out rounded cursor-pointer hover:bg-gray-800"
-                    >
-                        <h4 class="flex-shrink-0 leading-6">c</h4>
-                        <div class="flex-grow">
-                            <h4 class="text-lg font-medium">Neutral</h4>
-                            <p class="text-sm">{{ $this->question->description_neutral }}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-3">
-                    <div wire:click="respond('disagree')"
-                         class="flex px-4 py-2 space-x-5 transition duration-200 ease-in-out rounded cursor-pointer hover:bg-gray-800"
-                    >
-                        <h4 class="flex-shrink-0 leading-6">d</h4>
-                        <div class="flex-grow">
-                            <h4 class="text-lg font-medium">Disagree</h4>
-                            <p class="text-sm">{{ $this->question->description_disagree }}</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-3">
-                    <div wire:click="respond('stronglyDisagree')"
-                         class="flex px-4 py-2 space-x-5 transition duration-200 ease-in-out rounded cursor-pointer hover:bg-gray-800"
-                    >
-                        <h4 class="flex-shrink-0 leading-6">e</h4>
-                        <div class="flex-grow">
-                            <h4 class="text-lg font-medium">Strongly disagree</h4>
-                            <p class="text-sm">{{ $this->question->description_strongly_disagree }}</p>
+                            <div class="mt-3">
+                                <div wire:click="respond('stronglyDisagree')"
+                                     class="flex px-4 py-2 space-x-5 transition duration-200 ease-in-out rounded cursor-pointer hover:bg-gray-800"
+                                >
+                                    <h4 class="flex-shrink-0 leading-6">e</h4>
+                                    <div class="flex-grow">
+                                        <h4 class="text-lg font-medium">Strongly disagree</h4>
+                                        <p class="text-sm">{{ $this->question->description_strongly_disagree }}</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="space-y-3">
-        <div class="flex justify-between text-sm">
-            <p>Least important</p>
+        <div class="space-y-3">
+            <div class="flex justify-between text-sm">
+                <p>Least important</p>
 
-            <p>Most important</p>
+                <p>Most important</p>
+            </div>
+
+            <input wire:model="importance" type="range" min="0" max="10" class="w-full bg-transparent" />
         </div>
 
-        <input wire:model="importance" type="range" min="0" max="10" class="w-full bg-transparent" />
-    </div>
-
-    <div class="flex @if ($questionIndex) justify-between @else justify-end @endif">
-        @if ($questionIndex)
-            <span class="rounded-md shadow-sm">
-                <button wire:click="previousQuestion" type="button"
-                        class="inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-gray-600 border border-transparent rounded-md hover:bg-gray-500 focus:outline-none focus:shadow-outline-gray focus:border-gray-700 active:bg-gray-700"
-                >
-                    <svg class="w-5 h-5 mr-2 -ml-1 text-gray-300" viewBox="0 0 20 20"
-                         fill="currentColor"
+        <div class="flex @if ($questionIndex) justify-between @else justify-end @endif">
+            @if ($questionIndex)
+                <span class="rounded-md shadow-sm">
+                    <button wire:click="previousQuestion" type="button"
+                            class="inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-gray-600 border border-transparent rounded-md hover:bg-gray-500 focus:outline-none focus:shadow-outline-gray focus:border-gray-700 active:bg-gray-700"
                     >
-                        <path fill-rule="evenodd"
-                              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                              clip-rule="evenodd"
-                        />
-                    </svg>
-                    <span class="inline sm:hidden">Previous</span>
-                    <span class="hidden sm:inline">Previous question</span>
-                </button>
-            </span>
-        @endif
+                        <svg class="w-5 h-5 mr-2 -ml-1 text-gray-300" viewBox="0 0 20 20"
+                             fill="currentColor"
+                        >
+                            <path fill-rule="evenodd"
+                                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                  clip-rule="evenodd"
+                            />
+                        </svg>
+                        <span class="inline sm:hidden">Previous</span>
+                        <span class="hidden sm:inline">Previous question</span>
+                    </button>
+                </span>
+            @endif
 
-        <div class="space-x-3">
-            @unless($this->question->is_required && ! array_key_exists($questionIndex, $responses))
-                <button wire:click="nextQuestion" type="button"
-                        class="inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-gray-600 border border-transparent rounded-md hover:bg-gray-500 focus:outline-none focus:shadow-outline-gray focus:border-gray-700 active:bg-gray-700"
-                >
-                    <span class="inline sm:hidden">Skip</span>
-                    <span class="hidden sm:inline">Skip question</span>
+            <div class="space-x-3">
+                @unless($this->question->is_required && ! array_key_exists($questionIndex, $responses))
+                    <button wire:click="nextQuestion" type="button"
+                            class="inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-gray-600 border border-transparent rounded-md hover:bg-gray-500 focus:outline-none focus:shadow-outline-gray focus:border-gray-700 active:bg-gray-700"
+                    >
+                        <span class="inline sm:hidden">Skip</span>
+                        <span class="hidden sm:inline">Skip question</span>
 
-                    <svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                              clip-rule="evenodd"
-                        ></path>
-                    </svg>
-                </button>
-            @endunless
+                        <svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                  clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                    </button>
+                @endunless
+            </div>
         </div>
-    </div>
+    @else
+        @include('test.question-suggestion-form')
+    @endunless
 </div>
