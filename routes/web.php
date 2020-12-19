@@ -24,6 +24,7 @@ Route::get('', function () {
     return view('home', [
         'partners' => \App\Models\Partner::limit(8)->get(),
         'questionsAnswered' => cache('questionsAnswered'),
+        'reviews' => \App\Models\Partner::all()->filter(fn ($partner) => (bool) $partner->review)->take(3)->values(),
         'testsTaken' => cache('testsTaken'),
     ]);
 })->name('home');

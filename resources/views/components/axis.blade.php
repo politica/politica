@@ -5,7 +5,7 @@
         class="flex flex-col flex-shrink-0 overflow-hidden bg-white border-2 border-white rounded-lg h-14 w-14 sm:h-20 sm:w-20"
     >
         <div class="bg-{{ $result->axis->color_left }} flex-grow flex items-center px-3 sm:px-4">
-            <img src="/images/axis-icons/{{ $result->axis->icon_left }}"
+            <img src="{{ media($result->axis->icon_left) }}"
                  class="w-full"
             />
         </div>
@@ -42,7 +42,7 @@
         class="flex flex-col flex-shrink-0 overflow-hidden bg-white border-2 border-white rounded-lg h-14 w-14 sm:h-20 sm:w-20"
     >
         <div class="bg-{{ $result->axis->color_right }} flex-grow flex items-center px-3 sm:px-4">
-            <img src="/images/axis-icons/{{ $result->axis->icon_right }}"
+            <img src="{{ media($result->axis->icon_right) }}"
                  class="w-full"
             />
         </div>

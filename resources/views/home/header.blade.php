@@ -46,7 +46,7 @@
                 <a href="{{ $partner->description ? route('partners.show', ['partner' => $partner]) : $partner->invite }}"
                    class="flex justify-center col-span-1 animate-entry"
                 >
-                    <img class="h-16" src="/images/partner-logos/{{ $partner->logo }}"
+                    <img class="h-16" src="{{ media($partner->logo) }}"
                          alt="{{ $partner->name }}"
                     >
                 </a>

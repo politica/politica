@@ -1,12 +1,11 @@
 <div class="max-w-3xl mx-auto">
-    <div class="flex justify-between items-center">
+    <div class="sm:flex justify-between items-center space-y-3 sm:space-y-0">
         <h3 class="font-heading text-white text-2xl">Suggest an Improvement to this Question</h3>
 
         <button wire:click="$set('suggestionFormOpen', false)" type="button"
-                class="inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-md hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700"
+                class="flex-shrink-0 inline-flex items-center px-4 py-2 text-sm font-medium leading-5 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-md hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700"
         >
-            <span class="inline sm:hidden">Cancel</span>
-            <span class="hidden sm:inline">Cancel suggestion</span>
+            <span>Cancel suggestion</span>
 
             <x-heroicon-s-x class="w-5 h-5 ml-2 -mr-1" />
         </button>
@@ -14,7 +13,7 @@
 
     <form wire:submit.prevent="submitSuggestion" class="mt-6">
         <div class="space-y-6">
-            <textarea wire:model="suggestionForm.body" rows="2" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm border-gray-700 bg-gray-900 text-gray-100 rounded-md text-lg"></textarea>
+            <textarea wire:model="suggestionForm.body" rows="2" class="focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm border-gray-700 bg-gray-900 text-gray-100 rounded-md sm:text-lg"></textarea>
 
             <div class="space-y-3">
                 <div>

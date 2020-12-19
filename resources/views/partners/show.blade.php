@@ -6,7 +6,7 @@
     <header class="px-4 sm:px-6 lg:px-8">
         <div class="sm:flex sm:items-center sm:justify-between sm:space-x-8">
             <div class="flex-shrink-0">
-                <img src="/images/partner-logos/{{ $partner->logo }}"
+                <img src="{{ media($partner->logo) }}"
                      class="w-32 h-32 mx-auto rounded-full sm:mx-0"
                 />
             </div>
@@ -104,7 +104,7 @@
         <div class="relative lg:flex lg:items-center">
             <div class="hidden lg:block lg:flex-shrink-0">
                 <img class="w-64 h-64 rounded-full xl:h-80 xl:w-80"
-                     src="/images/reviewer-avatars/{{ $partner->reviewer_avatar }}" alt="{{ $partner->reviewer_name }}"
+                     src="{{ media($partner->reviewer_avatar) }}" alt="{{ $partner->reviewer_name }}"
                 />
             </div>
 
