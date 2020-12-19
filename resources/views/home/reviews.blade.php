@@ -1,9 +1,9 @@
 <section>
     <div class="relative max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8 lg:py-20">
-        @isset ($reviews[0])
+        @isset ($reviewedPartners[0])
             <div class="relative lg:flex lg:items-center">
                 <div class="hidden lg:block lg:flex-shrink-0">
-                    <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80" src="{{ media($reviews[0]->reviewer_avatar) }}" alt="{{ $reviews[0]->reviewer_name }}" />
+                    <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80" src="{{ media($reviewedPartners[0]->reviewer_avatar) }}" alt="{{ $reviewedPartners[0]->reviewer_name }}" />
                 </div>
 
                 <div class="relative lg:ml-10">
@@ -18,18 +18,18 @@
                     <blockquote class="relative">
                         <div class="text-2xl leading-9 font-medium">
                             <p>
-                                {{ $reviews[0]->review }}
+                                {{ $reviewedPartners[0]->review }}
                             </p>
                         </div>
                         <footer class="mt-8">
                             <div class="flex">
                                 <div class="flex-shrink-0 lg:hidden">
-                                    <img class="h-12 w-12 rounded-full" src="{{ media($reviews[0]->reviewer_avatar) }}" alt="{{ $reviews[0]->reviewer_name }}" />
+                                    <img class="h-12 w-12 rounded-full" src="{{ media($reviewedPartners[0]->reviewer_avatar) }}" alt="{{ $reviewedPartners[0]->reviewer_name }}" />
                                 </div>
                                 <div class="ml-4 lg:ml-0">
-                                    <div class="text-lg leading-6 font-medium">{{ $reviews[0]->reviewer_name }}</div>
+                                    <div class="text-lg leading-6 font-medium">{{ $reviewedPartners[0]->reviewer_name }}</div>
                                     <div class="text-base leading-6 font-medium text-indigo-400">
-                                        Member, {{ $reviews[0]->name }}
+                                        Member, {{ $reviewedPartners[0]->name }}
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
             </div>
         @endisset
 
-        @isset($reviews[1])
+        @isset($reviewedPartners[1])
             <div class="mt-32 relative lg:flex lg:items-center">
                 <div class="relative lg:mr-10">
                     <svg
@@ -53,18 +53,18 @@
                     <blockquote class="relative">
                         <div class="text-2xl leading-9 font-medium">
                             <p>
-                                {{ $reviews[1]->review }}
+                                {{ $reviewedPartners[1]->review }}
                             </p>
                         </div>
                         <footer class="mt-8">
                             <div class="flex">
                                 <div class="flex-shrink-0 lg:hidden">
-                                    <img class="h-12 w-12 rounded-full" src="{{ media($reviews[1]->reviewer_avatar) }}" alt="{{ $reviews[1]->reviewer_name }}" />
+                                    <img class="h-12 w-12 rounded-full" src="{{ media($reviewedPartners[1]->reviewer_avatar) }}" alt="{{ $reviewedPartners[1]->reviewer_name }}" />
                                 </div>
                                 <div class="ml-4 lg:ml-0">
-                                    <div class="text-lg leading-6 font-medium">{{ $reviews[1]->reviewer_name }}</div>
+                                    <div class="text-lg leading-6 font-medium">{{ $reviewedPartners[1]->reviewer_name }}</div>
                                     <div class="text-base leading-6 font-medium text-indigo-400">
-                                        Member, {{ $reviews[1]->name }}
+                                        Member, {{ $reviewedPartners[1]->name }}
                                     </div>
                                 </div>
                             </div>
@@ -74,17 +74,17 @@
 
                 <div class="hidden lg:block lg:flex-shrink-0">
                     <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80"
-                         src="{{ media($reviews[1]->reviewer_avatar) }}"
-                         alt="{{ $reviews[1]->reviewer_name }}"
+                         src="{{ media($reviewedPartners[1]->reviewer_avatar) }}"
+                         alt="{{ $reviewedPartners[1]->reviewer_name }}"
                     />
                 </div>
             </div>
         @endisset
 
-        @isset ($reviews[2])
+        @isset ($reviewedPartners[2])
             <div class="mt-32 relative lg:flex lg:items-center">
                 <div class="hidden lg:block lg:flex-shrink-0">
-                    <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80" src="{{ media($reviews[2]->reviewer_avatar) }}" alt="{{ $reviews[2]->reviewer_name }}" />
+                    <img class="h-64 w-64 rounded-full xl:h-80 xl:w-80" src="{{ media($reviewedPartners[2]->reviewer_avatar) }}" alt="{{ $reviewedPartners[2]->reviewer_name }}" />
                 </div>
 
                 <div class="relative lg:ml-10">
@@ -99,18 +99,18 @@
                     <blockquote class="relative">
                         <div class="text-2xl leading-9 font-medium">
                             <p>
-                                {{ $reviews[2]->review }}
+                                {{ $reviewedPartners[2]->review }}
                             </p>
                         </div>
                         <footer class="mt-8">
                             <div class="flex">
                                 <div class="flex-shrink-0 lg:hidden">
-                                    <img class="h-12 w-12 rounded-full" src="{{ media($reviews[2]->reviewer_avatar) }}" alt="{{ $reviews[2]->reviewer_name }}" />
+                                    <img class="h-12 w-12 rounded-full" src="{{ media($reviewedPartners[2]->reviewer_avatar) }}" alt="{{ $reviewedPartners[2]->reviewer_name }}" />
                                 </div>
                                 <div class="ml-4 lg:ml-0">
-                                    <div class="text-lg leading-6 font-medium">{{ $reviews[2]->reviewer_name }}</div>
+                                    <div class="text-lg leading-6 font-medium">{{ $reviewedPartners[2]->reviewer_name }}</div>
                                     <div class="text-base leading-6 font-medium text-indigo-400">
-                                        Member, {{ $reviews[2]->name }}
+                                        Member, {{ $reviewedPartners[2]->name }}
                                     </div>
                                 </div>
                             </div>

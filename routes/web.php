@@ -18,14 +18,16 @@ use Laravel\Socialite\Facades\Socialite;
 */
 
 Route::get('', function () {
-    Cache::add('questionsAnswered', \App\Models\Result::sum('questions_answered'), 60);
-    Cache::add('testsTaken', \App\Models\Result::count(), 60);
+    Cache::add('stats.partners', \App\Models\Partner::count(), 60);
+    Cache::add('stats.answered-questions', \App\Models\Result::sum('questions_answered'), 60);
 
     return view('home', [
-        'partners' => \App\Models\Partner::limit(8)->get(),
-        'questionsAnswered' => cache('questionsAnswered'),
-        'reviews' => \App\Models\Partner::all()->filter(fn ($partner) => (bool) $partner->review)->take(3)->values(),
-        'testsTaken' => cache('testsTaken'),
+        'featuredPartners' => \App\Models\Partner::limit(8)->get(),
+        'reviewedPartners' => \App\Models\Partner::all()->filter(fn ($partner) => (bool) $partner->review)->take(3)->values(),
+        'stats' => (object) [
+            'answeredQuestions' => cache('stats.answered-questions'),
+            'partners' => cache('stats.partners'),
+        ],
     ]);
 })->name('home');
 
@@ -85,7 +87,6 @@ Route::name('auth.')->prefix('auth')->group(function () {
 
             return redirect()->intended();
         })->name('providers.discord.callback');
-        // Route::get('providers/twitter/callback', [AuthController::class, 'handleTwitterCallback'])->name('providers.twitter.callback');
     });
 
     Route::post('logout', function () {

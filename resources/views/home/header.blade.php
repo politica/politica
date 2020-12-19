@@ -42,7 +42,7 @@
         <h3 class="text-sm font-display tracking-wide text-center text-gray-300 uppercase">Created by the
             largest political communities on Discord</h3>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 mt-8 md:grid-cols-8">
-            @foreach ($partners as $partner)
+            @foreach ($featuredPartners as $partner)
                 <a href="{{ $partner->description ? route('partners.show', ['partner' => $partner]) : $partner->invite }}"
                    class="flex justify-center col-span-1 animate-entry"
                 >
