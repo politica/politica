@@ -222,9 +222,9 @@
 
         <div class="space-y-3">
             <div class="flex justify-between text-sm">
-                <p>Least important</p>
+                <p>Unimportant</p>
 
-                <p>Most important</p>
+                <p>Very important</p>
             </div>
 
             <input wire:model="importance" type="range" min="0" max="10" class="w-full bg-transparent" />
