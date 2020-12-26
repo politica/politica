@@ -3,8 +3,7 @@
         <h2 class="text-4xl font-display sm:text-5xl md:text-6xl space-y-4">
             <div>Explore your</div>
             <div class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-indigo-700">
-                Political
-                Positions
+                Political Positions
             </div>
         </h2>
         <p class="max-w-md mx-auto mt-3 text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
@@ -14,18 +13,14 @@
 
         <div class="max-w-md mx-auto sm:flex sm:justify-center mt-8">
             <div class="rounded-md shadow">
-                <a href="{{ route('test') }}"
-                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+{{--                <a href="{{ route('test') }}"--}}
+                <a
+                   class="cursor-not-allowed w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
                 >
-                    Get started
-                    <svg class="-mr-1 ml-3 h-6 w-6" viewBox="0 0 20 20" fill="currentColor"
-                         class="arrow-narrow-right w-6 h-6"
-                    >
-                        <path fill-rule="evenodd"
-                              d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                              clip-rule="evenodd"
-                        ></path>
-                    </svg>
+                    Coming soon
+{{--                    Get started--}}
+
+                    <x-heroicon-s-arrow-narrow-right class="-mr-1 ml-3 h-6 w-6" />
                 </a>
             </div>
             <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">

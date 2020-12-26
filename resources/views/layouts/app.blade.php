@@ -79,14 +79,14 @@
                         </div>
                     </div>
                     <div class="hidden space-x-10 md:flex md:ml-10">
-                        <a href="{{ route('test') }}"
-                           class="font-medium text-white transition duration-150 ease-in-out hover:text-gray-300"
-                        >Take Test
-                        </a>
-                        {{--<a href="#"--}}
-                        {{--   class="font-medium text-white transition duration-150 ease-in-out hover:text-gray-300"--}}
-                        {{-->Discover--}}
-                        {{--</a>--}}
+{{--                        <a href="{{ route('test') }}"--}}
+{{--                           class="font-medium text-white transition duration-150 ease-in-out hover:text-gray-300"--}}
+{{--                        >Take Test--}}
+{{--                        </a>--}}
+{{--                        <a href="#"--}}
+{{--                           class="font-medium text-white transition duration-150 ease-in-out hover:text-gray-300"--}}
+{{--                        >Discover--}}
+{{--                        </a>--}}
                         <a href="{{ route('partners.index') }}"
                            class="font-medium text-white transition duration-150 ease-in-out hover:text-gray-300"
                         >Our Partners
@@ -209,27 +209,27 @@
                             </div>
                         </div>
                         <div class="px-2 pt-2 pb-3 space-y-1">
-                            <a href="{{ route('test') }}"
-                               class="block px-3 py-2 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"
-                               role="menuitem"
-                            >Take Test
-                            </a>
-                            {{--<a href="#"--}}
-                            {{--   class="block px-3 py-2 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"--}}
-                            {{--   role="menuitem"--}}
-                            {{-->Discover--}}
-                            {{--</a>--}}
+{{--                            <a href="{{ route('test') }}"--}}
+{{--                               class="block px-3 py-2 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"--}}
+{{--                               role="menuitem"--}}
+{{--                            >Take Test--}}
+{{--                            </a>--}}
+{{--                            <a href="#"--}}
+{{--                               class="block px-3 py-2 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"--}}
+{{--                               role="menuitem"--}}
+{{--                            >Discover--}}
+{{--                            </a>--}}
                             <a href="{{ route('partners.index') }}"
                                class="block px-3 py-2 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"
                                role="menuitem"
                             >Our Partners
                             </a>
                             @auth
-                                <a href="{{ route('users.show', ['user' => user()]) }}"
-                                   class="block px-3 py-2 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"
-                                   role="menuitem"
-                                >My Profile
-                                </a>
+{{--                                <a href="{{ route('users.show', ['user' => user()]) }}"--}}
+{{--                                   class="block px-3 py-2 text-base font-medium text-gray-700 transition duration-150 ease-in-out rounded-md hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50"--}}
+{{--                                   role="menuitem"--}}
+{{--                                >My Profile--}}
+{{--                                </a>--}}
                                 <a href="{{ route('auth.logout') }}"
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
 
